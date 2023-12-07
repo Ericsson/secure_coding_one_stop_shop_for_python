@@ -37,12 +37,18 @@ It is **not production code** and requires code-style or python best practices t
 |<div style="width:500px">[CWE-664: Improper Control of a Resource Through its Lifetime](https://cwe.mitre.org/data/definitions/664.html)</div>|<div style="width:120px">Prominent CVE</div>|
 |:----------------------------------------------------------------|:----|
 |[CWE-134: Use of Externally-Controlled Format String](CWE-664/CWE-134/.)|[CVE-2022-27177](https://www.cvedetails.com/cve/CVE-2022-27177/),<br />CVSSv3.1: **9.8**,<br />EPSS:**00.37**(01.12.2023)|
-|[CWE-400: Incorrect behavior order: Validate before Canonicalize](CWE-664/CWE-400/.)||
-|[CWE-883: Deadlock](CWE-664/CWE-833/.)||
+|[CWE-400: Uncontrolled Resource Consumption](CWE-664/CWE-400/.)||
+|[CWE-409: Improper Handling of Highly Compressed Data (Data Amplification)](CWE-664/CWE-409/.)||
+|[CWE-665: Improper Initialization](CWE-664/CWE-665/.)||
+|[CWE-833: Deadlock](CWE-664/CWE-833/.)||
+
+|<div style="width:500px">[CWE-693: Protection Mechanism Failure](https://cwe.mitre.org/data/definitions/693.html)</div>|<div style="width:120px">Prominent CVE</div>|
+|:----------------------------------------------------------------|:----|
+|[CWE-330: Use of Insufficiently Random Values](CWE-693/CWE-330/.)|
 
 |<div style="width:500px">[CWE-707: Improper Neutralization](https://cwe.mitre.org/data/definitions/707.html)</div>|<div style="width:120px">Prominent CVE</div>|
 |:----------------------------------------------------------------|:----|
-|[CWE-117: Use of Externally-Controlled Format String](CWE-707/CWE-117/.)||
+|[CWE-117: Improper Output Neutralization for Logs](CWE-707/CWE-117/.)||
 |[CWE-180: Incorrect behavior order: Validate before Canonicalize](CWE-707/CWE-180/.)||
 
 
