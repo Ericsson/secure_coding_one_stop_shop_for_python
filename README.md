@@ -23,7 +23,7 @@ Every person writing code shall study the following:
 
 # Secure Coding Standard for Python
 Code examples are written to explain security design with as little code as possible demonstrating the issue in the `noncompliantXX.py` titled Python file.
-The `compliantXX.py` file demonstrates mitigation or removal of the only the described risk.
+The `compliantXX.py` file demonstrates only the mitigation or removal of the described risk.
 None of the code examples are intendet to be used 'as is' for production. Using the code is at your own risk. 
 
 It is **not production code** and requires code-style or python best practices to be added such as:
@@ -39,12 +39,22 @@ It is **not production code** and requires code-style or python best practices t
 |[CWE-134: Use of Externally-Controlled Format String](CWE-664/CWE-134/.)|[CVE-2022-27177](https://www.cvedetails.com/cve/CVE-2022-27177/),<br />CVSSv3.1: **9.8**,<br />EPSS:**00.37**(01.12.2023)|
 |[CWE-400: Uncontrolled Resource Consumption](CWE-664/CWE-400/.)||
 |[CWE-409: Improper Handling of Highly Compressed Data (Data Amplification)](CWE-664/CWE-409/.)||
+|[CWE-410: Insufficient Resource Pool](CWE-664/CWE-410/.)||
+|[CWE-502: Deserialization of Untrusted Data)](CWE-664/CWE-502/.)||
 |[CWE-665: Improper Initialization](CWE-664/CWE-665/.)||
 |[CWE-833: Deadlock](CWE-664/CWE-833/.)||
+|[XXX-005: Consider hash-based integrity verification of byte code files against their source code files](CWE-664/XXX-005/.)||
 
 |<div style="width:500px">[CWE-693: Protection Mechanism Failure](https://cwe.mitre.org/data/definitions/693.html)</div>|<div style="width:120px">Prominent CVE</div>|
 |:----------------------------------------------------------------|:----|
-|[CWE-330: Use of Insufficiently Random Values](CWE-693/CWE-330/.)|
+|[CWE-184: Incomplete List of Disallowed Input](CWE-693/CWE-184/.)||
+|[CWE-330: Use of Insufficiently Random Values](CWE-693/CWE-330/.)||
+|[CWE-798: Use of hardcoded credentials](CWE-693/CWE-798/.)||
+
+|<div style="width:500px">[CWE-703: Improper Check or Handling of Exceptional Conditions](https://cwe.mitre.org/data/definitions/703.html)</div>|<div style="width:120px">Prominent CVE</div>|
+|:----------------------------------------------------------------|:----|
+|[CWE-392: Missing Report of Error Condition](CWE-703/CWE-392/.)||
+
 
 |<div style="width:500px">[CWE-707: Improper Neutralization](https://cwe.mitre.org/data/definitions/707.html)</div>|<div style="width:120px">Prominent CVE</div>|
 |:----------------------------------------------------------------|:----|
