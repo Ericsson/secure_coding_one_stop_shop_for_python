@@ -54,6 +54,7 @@ It is **not production code** and requires code-style or python best practices t
 |<div style="width:500px">[CWE-703: Improper Check or Handling of Exceptional Conditions](https://cwe.mitre.org/data/definitions/703.html)</div>|<div style="width:120px">Prominent CVE</div>|
 |:----------------------------------------------------------------|:----|
 |[CWE-392: Missing Report of Error Condition](CWE-703/CWE-392/.)||
+|[CWE-754: Improper Check for Unusual or Exceptional Conditions](CWE-703/CWE-754/.)||
 
 
 |<div style="width:500px">[CWE-707: Improper Neutralization](https://cwe.mitre.org/data/definitions/707.html)</div>|<div style="width:120px">Prominent CVE</div>|
