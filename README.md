@@ -34,7 +34,7 @@ It is **not production code** and requires code-style or python best practices t
 * Proper logging instead of printing to `stdout`
 * Secure coding compliance outside of described issue
 
-| <div style="width:500px">[CWE-664: Improper Control of a Resource Through its Lifetime](https://cwe.mitre.org/data/definitions/664.html)</div> |<div style="width:120px">Prominent CVE</div>|
+|[CWE-664: Improper Control of a Resource Through its Lifetime](https://cwe.mitre.org/data/definitions/664.html)<img width=520/>|Prominent CVE <img width=80/>|
 |:-----------------------------------------------------------------------------------------------------------------------------------------------|:----|
 | [CWE-134: Use of Externally-Controlled Format String](CWE-664/CWE-134/.)                                                                       |[CVE-2022-27177](https://www.cvedetails.com/cve/CVE-2022-27177/),<br />CVSSv3.1: **9.8**,<br />EPSS:**00.37**(01.12.2023)|
 | [CWE-197: Numeric Truncation Error](CWE-664/CWE-197/.)                                                                                         ||
@@ -46,25 +46,25 @@ It is **not production code** and requires code-style or python best practices t
 | [CWE-833: Deadlock](CWE-664/CWE-833/.)                                                                                                         ||
 | [XXX-005: Consider hash-based integrity verification of byte code files against their source code files](CWE-664/XXX-005/.)                    ||
 
-|<div style="width:500px">[CWE-693: Protection Mechanism Failure](https://cwe.mitre.org/data/definitions/693.html)</div>|<div style="width:120px">Prominent CVE</div>|
+|[CWE-693: Protection Mechanism Failure](https://cwe.mitre.org/data/definitions/693.html)<img width=520/>|Prominent CVE<img width=80/>|
 |:----------------------------------------------------------------|:----|
 |[CWE-184: Incomplete List of Disallowed Input](CWE-693/CWE-184/.)||
 |[CWE-330: Use of Insufficiently Random Values](CWE-693/CWE-330/.)||
 |[CWE-798: Use of hardcoded credentials](CWE-693/CWE-798/.)||
 
-|<div style="width:500px">[CWE-703: Improper Check or Handling of Exceptional Conditions](https://cwe.mitre.org/data/definitions/703.html)</div>|<div style="width:120px">Prominent CVE</div>|
+|[CWE-703: Improper Check or Handling of Exceptional Conditions](https://cwe.mitre.org/data/definitions/703.html)<img width=420/>|Prominent CVE <img width=80/>|
 |:----------------------------------------------------------------|:----|
 |[CWE-392: Missing Report of Error Condition](CWE-703/CWE-392/.)||
 |[CWE-754: Improper Check for Unusual or Exceptional Conditions](CWE-703/CWE-754/.)||
 
 
-|<div style="width:500px">[CWE-707: Improper Neutralization](https://cwe.mitre.org/data/definitions/707.html)</div>|<div style="width:120px">Prominent CVE</div>|
+|[CWE-707: Improper Neutralization](https://cwe.mitre.org/data/definitions/707.html)<img width=520/>|Prominent CVE<img width=80/>|
 |:----------------------------------------------------------------|:----|
 |[CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')](CWE-707/CWE-89/.)|[CVE-2019-8600](https://www.cvedetails.com/cve/CVE-2019-8600/),<br />CVSSv3.1: **9.8**,<br />EPSS:**01.43**(18.02.2024)|
 |[CWE-117: Improper Output Neutralization for Logs](CWE-707/CWE-117/.)||
 |[CWE-180: Incorrect behavior order: Validate before Canonicalize](CWE-707/CWE-180/.)||
 
-|<div style="width:500px">[CWE-710: Improper Adherence to Coding Standards](https://cwe.mitre.org/data/definitions/710.html)</div>|<div style="width:120px">Prominent CVE</div>|
+|[CWE-710: Improper Adherence to Coding Standards](https://cwe.mitre.org/data/definitions/710.html)<img width=520/>|Prominent CVE<img width=80/>|
 |:----------------------------------------------------------------|:----|
 |[CWE-1095: Loop Condition Value Update within the Loop](CWE-710/CWE-1095/.)||
 |[CWE-1109: Use of Same Variable for Multiple Purposes](CWE-710/CWE-1109/.)||
