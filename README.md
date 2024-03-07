@@ -47,17 +47,10 @@ It is **not production code** and requires code-style or python best practices t
 | [XXX-005: Consider hash-based integrity verification of byte code files against their source code files](CWE-664/XXX-005/.)                    ||
 |<img width=680>|<img width=140>|
 
-<<<<<<< HEAD
 | [CWE-682: Incorrect Calculation](https://cwe.mitre.org/data/definitions/682.html)</div>                        |<div style="width:120px">Prominent CVE</div>|
 |:---------------------------------------------------------------------------------------------------------------|:----|
 | [CWE-1339: Insufficient Precision or Accuracy of a Real Number](CWE-682/CWE-1339/.)                            ||
 | <img width=680>                                                                                                |<img width=140>|
-=======
-| <div style="width:500px">[CWE-682: Incorrect Calculation](https://cwe.mitre.org/data/definitions/682.html)</div> |<div style="width:120px">Prominent CVE</div>|
-|:-----------------------------------------------------------------------------------------------------------------|:----|
-| [CWE-1339: Insufficient Precision or Accuracy of a Real Number](CWE-682/CWE-1339/.)                              ||
-| <img width=680>|<img width=140>|
->>>>>>> 3852605 (CWE-682 pillar structure + CWE-1339)
 
 |<div style="width:500px">[CWE-693: Protection Mechanism Failure](https://cwe.mitre.org/data/definitions/693.html)</div>|<div style="width:120px">Prominent CVE</div>|
 |:----------------------------------------------------------------|:----|
