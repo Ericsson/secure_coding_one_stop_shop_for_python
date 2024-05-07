@@ -41,7 +41,7 @@ It is **not production code** and requires code-style or python best practices t
 |[CWE-400: Uncontrolled Resource Consumption](CWE-664/CWE-400/.)||
 |[CWE-409: Improper Handling of Highly Compressed Data (Data Amplification)](CWE-664/CWE-409/.)||
 |[CWE-410: Insufficient Resource Pool](CWE-664/CWE-410/.)||
-|[CWE-502: Deserialization of Untrusted Data)](CWE-664/CWE-502/.)||
+|[CWE-502: Deserialization of Untrusted Data)](CWE-664/CWE-502/README.md)||
 |[CWE-665: Improper Initialization](CWE-664/CWE-665/.)||
 |[CWE-833: Deadlock](CWE-664/CWE-833/.)||
 |[CWE-843: Access of Resource Using Incompatible Type ('Type Confusion')](CWE-664/CWE-843/.)||
