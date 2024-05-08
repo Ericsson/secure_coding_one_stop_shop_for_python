@@ -1,7 +1,7 @@
 # CWE-502: Deserialization of Untrusted Data
 
-The `pickle` module is known to be vulnerable [docs.python.org 2023] against unwanted code execution during deserialization and should only be used if there is no architectural text-based alternative.
-Even if data has been created from a trusted source we need to verify that it has not been tampered with during transport. 
+The `pickle` module is known to be vulnerable [[docs.python.org 2023]](https://docs.python.org/3.9/library/pickle.html) against unwanted code execution during deserialization and should only be used if there is no architectural text-based alternative.
+Even if data has been created from a trusted source we need to verify that it has not been tampered with during transport.
 
 Security-related concerns during object serialization and deserialization include:
 
@@ -99,7 +99,7 @@ The deserializating `Preserver.uncan()` method has no solution to verify the con
 > [!CAUTION]
 > The `compliant01.py` code only demonstrates integrity protection with hmac.
 > The pickled object is not encrypted and key-handling is inappropriate!
-> Consider using proper key management with `x509` and encryption [pyca/cryptography 2023].
+> Consider using proper key management with `x509` and encryption [[pyca/cryptography 2023]](https://cryptography.io/en/latest/).
 
 *[compliant01.py](compliant01.py):*
 
@@ -322,6 +322,6 @@ Serialized data from a trusted input source does not require sanitization, provi
 
 |||
 |:---|:---|
-|[[Python docs]](https://docs.python.org/)|pickle — Python object serialization. Available from: [https://docs.python.org/3.9/library/pickle.html](https://docs.python.org/3.9/library/pickle.html) \[Accessed 07 May 2024]|
-|[python.org comparison-with-json 2023]|pickle - Comparison with json. Available from: [https://docs.python.org/3.9/library/pickle.html#comparison-with-json](https://docs.python.org/3.9/library/pickle.html#comparison-with-json) [Acessed 07 May 2024]|
-|[pyca/cryptography 2023]|Welcome to pyca/cryptography. Available from: https://cryptography.io/en/latest/ [Acessed 07 May 2024]|
+|[[docs.python.org 2023]](https://docs.python.org/)|pickle — Python object serialization. Available from: <https://docs.python.org/3.9/library/pickle.html> \[Accessed 07 May 2024]|
+|[python.org comparison-with-json 2023]|pickle - Comparison with JSON. Available from: <https://docs.python.org/3.9/library/pickle.html#comparison-with-json> \[Acessed 07 May 2024]|
+|[pyca/cryptography 2023]|Welcome to pyca/cryptography. Available from: <https://cryptography.io/en/latest/> \[Acessed 07 May 2024]|
