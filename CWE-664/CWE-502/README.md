@@ -1,5 +1,5 @@
-CWE-502: Deserialization of Untrusted Data
-==========================================
+# CWE-502: Deserialization of Untrusted Data
+
 The `pickle` module is known to be vulnerable [docs.python.org 2023] against unwanted code execution during deserialization and should only be used if there is no architectural text-based alternative.
 Even if data has been created from a trusted source we need to verify that it has not been tampered with during transport. 
 
@@ -13,10 +13,12 @@ Security-related concerns during object serialization and deserialization includ
 * Sign data that is crossing trust boundaries with `hmac`.
 * Use Input validation.
 
-# Noncompliant Code Example
+## Noncompliant Code Example
+
 The `noncompliant01.py`  code demonstrates arbitrary code execution [Checkoway Oct 2013] using `os.system` to launch a program during unpickling when `pickle.loads()`.
 
 *[noncompliant01.py](noncompliant01.py):*
+
 ```py
 """ Non-Compliant Code Example """
 import platform
@@ -97,8 +99,9 @@ The deserializating `Preserver.uncan()` method has no solution to verify the con
 > [!CAUTION]
 > The `compliant01.py` code only demonstrates integrity protection with hmac.
 > The pickled object is not encrypted and key-handling is inappropriate!
-> Consider using proper key management with `x509` and 
-> encryption [pyca/cryptography 2023].
+> Consider using proper key management with `x509` and encryption [pyca/cryptography 2023].
+
+*[compliant01.py](compliant01.py):*
 
 ```py
 """ Compliant Code Example """
@@ -188,14 +191,18 @@ p3 = Preserver(b"dont know")
 message = None
 message = p3.uncan(digest, PAYLOAD)
 ```
+
 The integrity verification in `compliant01.py` throws an exception `ValueError: Integrity of jar compromised prior to deserializationunpickling to prevent the PAYLOAD executed.`
 
-# Compliant Solution JSON without pickle
+## Compliant Solution JSON without pickle
+
 Text-based formats, such as `JSON` and `YAML`, should always be preferred. They have a lower set of capabilities and reduce the attack surface [python.org comparison-with-json 2023] when compared to `pickle`.
 
 The `compliant02.py`  code only allows serializing and deserialization of object data and not object methods as in `noncompliant01.py` or `compliant01.py`.
 
 Consider converting binary data into text using `Base64` encoding for performance and size irrelevant operations.
+
+*[compliant02.py](compliant02.py):*
 
 ```py
 """ Compliant Code Example """
@@ -280,18 +287,20 @@ p3 = Preserver()
 message = None
 message = p3.uncan(PAYLOAD)
 ```
+
 The `compliant02.py` stops with the unpacking with a `json.decoder.JSONDecodeError`.
 
-# Exceptions
+## Exceptions
+
 Serialized data from a trusted input source does not require sanitization, provided that the code clearly documents that it relies on the input source being trustworthy. For example, if a library is being audited, a routine of that library may have a documented precondition that its callers pre-sanitize any passed-in serialized data or confirm the input source as trustworthy.
 
-# Automated Detection
+## Automated Detection
 
 |Tool|Version|Checker|Description|
 |:----|:----|:----|:----|
-|Bandit|1.7.4|B301|Pickle and modules that wrap it can be unsafe when used to de-serialize untrusted data, possible security issue.|Bandit can only detect a pickle module in use and is unable to detect an acceptable implementation code that combines pickle with `hmac` and proper key managment.|
+|Bandit|1.7.4|B301|Pickle and modules that wrap it can be unsafe when used to de-serialize untrusted data, possible security issue.Bandit can only detect a pickle module in use and is unable to detect an acceptable implementation code that combines pickle with `hmac` and proper key managment.|
 
-# Related Vulnerabilities
+## Related Vulnerabilities
 
 |Product|CVE|Description|CVSS Rating|Comment|
 |:----|:----|:----|:----|:----|
@@ -301,19 +310,18 @@ Serialized data from a trusted input source does not require sanitization, provi
 |Superset prior to 0.23|[CVE-2018-8021](https://www.cvedetails.com/cve/CVE-2018-8021/)|TUnsafe load method from the pickle library to deserialize data leading to possible RCE|v3.1: 9.8 Critical|Exploit available on [exploit-db.com](https://www.exploit-db.com/exploits/45933)|
 |rpc.py through 0.6.0|[CVE-2022-35411](https://www.cvedetails.com/cve/CVE-2022-35411/)|HTTP HEADERS set to `"serializer: pickle"` triggers `rcp.py` to de-serialize with `pickle` instead of the default `JSON` allowing Allows Remote Code Execution|v3.1:9.8 Critical|Exploit available on [https://github.com/](https://github.com/ehtec/rpcpy-exploit/blob/main/rpcpy-exploit.py)|
 
+## Related Guidelines
 
-# Related Guidelines
 |||
 |:---|:---|
 |[SEI CERT Coding Standard for Java](https://wiki.sei.cmu.edu/confluence/display/java/SEI+CERT+Oracle+Coding+Standard+for+Java)|[SER01-J. Do not deviate from the proper signatures of serialization methods](https://wiki.sei.cmu.edu/confluence/display/java/SER01-J.+Do+not+deviate+from+the+proper+signatures+of+serialization+methods)|
 |[MITRE CWE](http://cwe.mitre.org/)|Pillar [CWE-664: Improper Control of a Resource Through its Lifetime (4.13) (mitre.org)](https://cwe.mitre.org/data/definitions/664.html)|
 |[MITRE CWE](http://cwe.mitre.org/)|Base [CWE-502, Deserialization of Untrusted Data](http://cwe.mitre.org/data/definitions/502.html)|
 
-# Biblography
+## Biblography
+
 |||
 |:---|:---|
-|[[Python docs]](https://docs.python.org/)|pickle — Python object serialization. Available from: https://docs.python.org/3.9/library/pickle.html [Accessed 07 May 2024]|
-|[python.org comparison-with-json 2023]|pickle - Comparison with json. Available from: https://docs.python.org/3.9/library/pickle.html#comparison-with-json [Acessed 07 May 2024]|
+|[[Python docs]](https://docs.python.org/)|pickle — Python object serialization. Available from: [https://docs.python.org/3.9/library/pickle.html](https://docs.python.org/3.9/library/pickle.html) \[Accessed 07 May 2024]|
+|[python.org comparison-with-json 2023]|pickle - Comparison with json. Available from: [https://docs.python.org/3.9/library/pickle.html#comparison-with-json](https://docs.python.org/3.9/library/pickle.html#comparison-with-json) [Acessed 07 May 2024]|
 |[pyca/cryptography 2023]|Welcome to pyca/cryptography. Available from: https://cryptography.io/en/latest/ [Acessed 07 May 2024]|
-
-
