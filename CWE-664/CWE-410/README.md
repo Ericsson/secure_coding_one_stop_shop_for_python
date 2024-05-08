@@ -1,6 +1,6 @@
-CWE-410: Insufficient Resource Pool
-===================================
-Ensure load control during traffic bursts or Denial of Service (DoS) by using a limited amount of threads in a pool. An attacker can cause a DoS by flooding a system with too many requests. Services with time-consuming, I/O-bound, or session-based sequential execution make limited use of available resources and can be blocked by a single hanging process or by overloading the queue. 
+# CWE-410: Insufficient Resource Pool
+
+Ensure load control during traffic bursts or Denial of Service (DoS) by using a limited amount of threads in a pool. An attacker can cause a DoS by flooding a system with too many requests. Services with time-consuming, I/O-bound, or session-based sequential execution make limited use of available resources and can be blocked by a single hanging process or by overloading the queue.
 
 Thread pools combine:
 
@@ -10,7 +10,8 @@ Thread pools combine:
 * Non-Compliant Code Example (Thread-Per-Message)
 * The noncompliant01.py code example demonstrates the Thread-Per-Message design pattern. Each request sent to MessageAPI results in a creation of a new thread.
 
-# Non-Compliant Code Example (Thread-Per-Message)
+## Non-Compliant Code Example (Thread-Per-Message)
+
 The `noncompliant01.py` code example demonstrates the Thread-Per-Message design pattern. Each request sent to MessageAPI results in a creation of a new thread.
 
 *[noncompliant01.py](noncompliant01.py):*
@@ -74,11 +75,13 @@ PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
 10806 user   20   0 9618068  18080   3516 S 238.2  0.1   0:08.16 python
 ```
 
-# Compliant Solution (Thread Pool)
+## Compliant Solution (Thread Pool)
+
 The `ThreadPoolExecutor` used in `compliant01.py` places a strict limit on concurrently executing threads. It takes `max_workers` as a constructor argument to determine the number of worker threads. Since `Python 3.8`, the default value for `max_workers` is `min(32, os.cpu_count() + 4)` [Python docs]. The `ThreadPoolExecutor` controlls the Pool of worker threads created and what threads should do when they are not being used, such as making them wait without consuming computational resources [Brownlee 2022]. This example could be further developed by adding more sophisticated timeout handling, limiting the number of messages per request, and sanitizing the input data, however for the sake of simplicity, these aspects have been omitted in the example. In a real application, the timeout and limits should be based on what the mediation layer provides and shall not be hardcoded.
 The attacker could still flood the server by creating multiple MessageAPI, each with their own pool. In order to prevent that, a proxy with an intrusion detection system would be necessary. In order to keep the scope of the rule manageable, the intrusion detection system was not implemented.
 
 *[compliant01.py](compliant01.py)*
+
 ```py
 """ Compliant Code Example """
 import logging
@@ -139,10 +142,12 @@ print(f"ATTACKER: done sending {len(attacker_messages)} messages, got {len(resul
 print(f"ATTACKER: result_list = {result_list}")
 ```
 
-# Non-Compliant Code Example (Thread Pool without cancellation)
+## Non-Compliant Code Example (Thread Pool without cancellation)
+
 The `executor.shutdown()`  method has a `cancel_futures` parameter, which by default is set to `False`. It is important to remember to cancel queued-up futures by either calling `cancel()` on a Future object or shutting down the `ThreadPoolExecutor`  with the cancel_futures set to `True`. Otherwise, despite the client receiving partial results upon the timeout, the server will continue to run the threads. This has been showcased in `noncompliant02.py`.
 
 *[noncompliant02.py](noncompliant02.py):*
+
 ```py
 """ Non-compliant Code Example """
 import logging
@@ -201,10 +206,13 @@ print(
     f"back")
 print(f"ATTACKER: result_list = {result_list}")
 ```
-# Compliant Solution (Thread Pool with grace period)
+
+## Compliant Solution (Thread Pool with grace period)
+
 The `compliant01.py` can be expanded by adding a grace period. Before dropping the messages, the application can warn the user about the long processing time and potentially unprocessed messages. In the `compliant02.py` example, two timeouts have been used - one for the grace period and another for canceling the request. Again, the timeout and limits should not be hardcoded and instead should be based on the input from the mediation layer.
 
 *[compliant02.py](compliant02.py):*
+
 ```py
 """ Compliant Code Example """
 import logging
@@ -278,20 +286,21 @@ print(
 print(f"ATTACKER: result_list = {result_list}")
 ```
 
-# Automated Detection
+## Automated Detection
 
 unknown
 
-# Related Guidelines
+## Related Guidelines
+
 |||
 |:---|:---|
 |[MITRE CWE](http://cwe.mitre.org/)|Pillar [CWE-664: Improper Control of a Resource Through its Lifetime (4.13) (mitre.org)](https://cwe.mitre.org/data/definitions/664.html)|
 |[MITRE CWE](http://cwe.mitre.org/)|Base [CWE-410, Insufficient Resource Pool](http://cwe.mitre.org/data/definitions/410.html)|
 |[SEI CERT Coding Standard for Java](https://wiki.sei.cmu.edu/confluence/display/java/SEI+CERT+Oracle+Coding+Standard+for+Java)|[TPS00-J. Use thread pools to enable graceful degradation of service during traffic bursts](https://wiki.sei.cmu.edu/confluence/display/java/TPS00-J.+Use+thread+pools+to+enable+graceful+degradation+of+service+during+traffic+bursts)|
 
+## Biblography
 
-# Biblography
 |||
 |:---|:---|
-|[Brownlee 2022]|Brownlee, J. (2022). ThreadPoolExecutor in Python: The Complete Guide online. Available from: https://docs.python.org/3/library/concurrent.futures.html [accessed 2 February 2023]|
-|[[Python docs]](https://docs.python.org/)|Python Software Foundation. (2023). concurrent.futures - Launching parallel tasks [online]Available from: https://docs.python.org/3/library/concurrent.futures.html#concurrent.futures.ThreadPoolExecutor|
+|[Brownlee 2022]|Brownlee, J. (2022). ThreadPoolExecutor in Python: The Complete Guide \[online]. Available from: <https://docs.python.org/3/library/concurrent.futures.html> \[Accessed 2 February 2023].|
+|[[Python docs]](https://docs.python.org/)|Python Software Foundation. (2023). concurrent.futures - Launching parallel tasks [online]. Available from: <https://docs.python.org/3/library/concurrent.futures.html#concurrent.futures.ThreadPoolExecutor> \[Accessed 2 February 2023].|
