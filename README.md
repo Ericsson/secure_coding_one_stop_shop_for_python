@@ -1,32 +1,35 @@
 # Secure Coding One Stop Shop for Python
 
-Promote secure products by knowing the difference between secure compliant 
-and non-compliant code with `CPython >= 3.9` using modules listed on 
-[Python Module Index](https://docs.python.org/3.9/py-modindex.html)[Python 2023]. 
+Promote secure products by knowing the difference between secure compliant
+and non-compliant code with `CPython >= 3.9` using modules listed on
+[[Python Module Index 2023]](https://docs.python.org/3.9/py-modindex.html) \[Python 2023].
 
-This page is in initiative by Ericsson to improve secure coding in Python by providing a location for study. Its structure is based on 
-Common Weakness Enamurator (CWE) [Pillar Weakness](https://cwe.mitre.org/documents/glossary/#Pillar%20Weakness) [mitre.org 2023]. 
+This page is in initiative by Ericsson to improve secure coding in Python by providing a location for study. Its structure is based on
+Common Weakness Enamurator (CWE) [Pillar Weakness](https://cwe.mitre.org/documents/glossary/#Pillar%20Weakness) \[mitre.org 2023].
 It currently contains *only* the code examples, documentation will follow.
 
-# Disclaimer
+## Disclaimer
+
 Content comes WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, as stated in the license text [CC-BY-4.0](LICENSE/CC-BY-4.0.txt) for documentation and [MIT](LICENSE/MIT.txt).
 Following or using the documentation and or code is at your own risk. Code examples are intended purely for educational use and not for products in parts or in full.
-Code examples are NOT to be used to cause harm of any kind to anyone or anything. 
+Code examples are NOT to be used to cause harm of any kind to anyone or anything.
 
+## Introduction
 
-# Introduction
 Every person writing code shall study the following:
 
 * OWASP Secure Coding [Practices-Quick Reference Guide](https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/) [OWASP 2022]
 * OWASP Top 10 Report [OWASP 2022](https://owasp.org/www-project-top-ten/) [OWASP 2022]
 * CWE Top 25 2022 [CWE 2022](https://cwe.mitre.org/top25/archive/2022/2022_cwe_top25.html) [MITRE 2023]
 
-# Secure Coding Standard for Python
+## Secure Coding Standard for Python
+
 Code examples are written to explain security design with as little code as possible demonstrating the issue in the `noncompliantXX.py` titled Python file.
 The `compliantXX.py` file demonstrates only the mitigation or removal of the described risk.
-None of the code examples are intendet to be used 'as is' for production. Using the code is at your own risk. 
+None of the code examples are intendet to be used 'as is' for production. Using the code is at your own risk.
 
 It is **not production code** and requires code-style or python best practices to be added such as:
+
 * Inline documentation
 * Custom exceptions
 * Full descriptive variable names
@@ -36,7 +39,7 @@ It is **not production code** and requires code-style or python best practices t
 
 |[CWE-664: Improper Control of a Resource Through its Lifetime](https://cwe.mitre.org/data/definitions/664.html)|Prominent CVE|
 |:-----------------------------------------------------------------------------------------------------------------------------------------------|:----|
-|[CWE-134: Use of Externally-Controlled Format String](CWE-664/CWE-134/.)|[CVE-2022-27177](https://www.cvedetails.com/cve/CVE-2022-27177/),<br />CVSSv3.1: **9.8**,<br />EPSS:**00.37**(01.12.2023)|
+|[CWE-134: Use of Externally-Controlled Format String](CWE-664/CWE-134/.)|[CVE-2022-27177](https://www.cvedetails.com/cve/CVE-2022-27177/),<br>CVSSv3.1: **9.8**,<br>EPSS:**00.37**(01.12.2023)|
 |[CWE-197: Numeric Truncation Error](CWE-664/CWE-197/.)||
 |[CWE-400: Uncontrolled Resource Consumption](CWE-664/CWE-400/.)||
 |[CWE-409: Improper Handling of Highly Compressed Data (Data Amplification)](CWE-664/CWE-409/.)||
@@ -47,7 +50,6 @@ It is **not production code** and requires code-style or python best practices t
 |[CWE-843: Access of Resource Using Incompatible Type ('Type Confusion')](CWE-664/CWE-843/.)||
 |[XXX-005: Consider hash-based integrity verification of byte code files against their source code files](CWE-664/XXX-005/.)||
 |<img width=680>|<img width=140>|
-
 
 |[CWE-682: Incorrect Calculation](https://cwe.mitre.org/data/definitions/682.html)|Prominent CVE|
 |:---------------------------------------------------------------------------------------------------------------|:----|
@@ -71,7 +73,7 @@ It is **not production code** and requires code-style or python best practices t
 
 |[CWE-707: Improper Neutralization](https://cwe.mitre.org/data/definitions/707.html)|Prominent CVE|
 |:----------------------------------------------------------------|:----|
-|[CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')](CWE-707/CWE-89/.)|[CVE-2019-8600](https://www.cvedetails.com/cve/CVE-2019-8600/),<br />CVSSv3.1: **9.8**,<br />EPSS:**01.43**(18.02.2024)|
+|[CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')](CWE-707/CWE-89/.)|[CVE-2019-8600](https://www.cvedetails.com/cve/CVE-2019-8600/),<br/>CVSSv3.1: **9.8**,<br/>EPSS:**01.43**(18.02.2024)|
 |[CWE-117: Improper Output Neutralization for Logs](CWE-707/CWE-117/.)||
 |[CWE-180: Incorrect behavior order: Validate before Canonicalize](CWE-707/CWE-180/.)||
 |<img width=680>|<img width=140>|
@@ -82,9 +84,7 @@ It is **not production code** and requires code-style or python best practices t
 |[CWE-1109: Use of Same Variable for Multiple Purposes](CWE-710/CWE-1109/.)||
 |<img width=680>|<img width=140>|
 
-
-
-# Biblography
+## Biblography
 
 |Ref|Detail|
 |-----|-----|
@@ -94,7 +94,7 @@ It is **not production code** and requires code-style or python best practices t
 |[OWASP 2022]|[OWASP Top 10 Report 2022](https://owasp.org/www-project-top-ten/)|
 |[MITRE 2023]|[CWE Top 25 2022](https://cwe.mitre.org/top25/archive/2022/2022_cwe_top25.html)|
 
+## License
 
-# License
 * [CC-BY 4.0](LICENSE/CC-BY-4.0.txt) for documentation
 * [MIT](LICENSE/MIT.txt) for code snippets
