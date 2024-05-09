@@ -94,7 +94,8 @@ The `join()` is a method that makes it so that the thread where the method was c
 
 `GIL` is a specific type of `mutex lock` that allows only one thread to hold control of the Python interpreter. This means that only one thread can be executed at a time, even in a multi-threaded architecture with more than one CPU core.
 
-[!NOTE] GIL can be disabled since `CPython 3.13.0a5+` as per [gh-116167: Allow disabling the GIL with PYTHON_GIL=0 or -X gil=0](https://github.com/python/cpython/pull/116338#event-12075112900)
+> [!NOTE]
+> GIL can be disabled since `CPython 3.13.0a5+` as per [gh-116167: Allow disabling the GIL with PYTHON_GIL=0 or -X gil=0](https://github.com/python/cpython/pull/116338#event-12075112900)
 
 The `noncompliant02.py` code example showcases how GIL impacts execution time in multithreaded applications.
 
