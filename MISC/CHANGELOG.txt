@@ -1,0 +1,32 @@
+Top page will be dead links until we published those readme's.
+
+Chapter: "What is Multithreading in Python - Multithreading vs Multiprocessing"
+- renamed 
+- renamed "(Source: [Medium])" -> [Nouer Uz Zaman 2021]
+
+Chapter: "Lock"
+- Renamed "lock_example.py" to "example01.py"
+- Removed link to empty page "Rule 09. Locking (LCK)"
+- Removed due to missing references "More use examples of locks can be found under the following rule:"
+- rephrased: "Output from the code above might look like this:" to "Example output from `example01.py`:"
+
+Chapter: "Deadlock"
+- removed "Here is a code example of a deadlock:" -> obvious
+- Renamed "deadlock_example.py" to "noncompliant01.py" assuming due to red coloured box
+
+Chapter: "Global Interpreter Lock (GIL)"
+- added info on GIL can be disabled since CPython 3.13.0a5+
+- renamed code from "gil_threads_example.py" to "noncompliant02.py"
+- rephrased "The code above when run on my machine produces the following output:" to "Example `noncompliant02.py` output:"
+- renamed "gil_processes_example.py" to "compliant01.py"
+
+Chapter: "CPU bound vs I/O bound threads"
+- renamed "io_bound_example.py" to "noncompliant03.py"
+
+Chapter: "Asynchronous I/O"
+- renamed "asyncio_example.py" to "compliant02.py"
+- rephrased "Here is a code example of how asyncio can be used:" to "The compliant02.py demonstrates how asyncio can be used." 
+
+Chapter: "Thread and Process Pools"
+- renamed "(Source: [PluralSight])" to "[Pluralsight Ojo]"
+- removed "Example uses of ThreadPoolExecutor  can be found under the following rule:" -> points to empty page
