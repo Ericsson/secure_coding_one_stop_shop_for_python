@@ -1,6 +1,6 @@
 # CWE-134: Use of Externally-Controlled Format String
 
-Ensure that all format string functions are passed a static string which cannot be controlled by the user [MTIRE 2023]
+Ensure that all format string functions are passed a static string which cannot be controlled by the user [[MITRE 2023]](https://cwe.mitre.org/data/definitions/134.html)
 
 In Python, the use of string formatting combined with the ability to access a function's `__globals__` attribute can exposing internal variables and methods unless properly guarded.
 
@@ -59,7 +59,7 @@ When `front_end("{0.__init__.__globals__[ENCRYPTION_KEY]}")` is called:
 
 ## Compliant Solution
 
-The `compliant01.py` solution uses the string template module and avoids mixing different ways of assembling the text. It is considered the safest option for string templates [Pader 2023]. It also provides a getter for instance name `get_instance_name` to reduce mixed access to members of `MicroService`.
+The `compliant01.py` solution uses the string template module and avoids mixing different ways of assembling the text. It is considered the safest option for string templates [[Bader 2023]](https://realpython.com/python-string-formatting/)|. It also provides a getter for instance name `get_instance_name` to reduce mixed access to members of `MicroService`.
 
 *[compliant01.py](compliant01.py):*
 
@@ -135,10 +135,10 @@ if __name__ == "__main__":
 |[MITRE CWE Pillar](http://cwe.mitre.org/)|[CWE-664: Improper Control of a Resource Through its Lifetime (4.13) (mitre.org)](https://cwe.mitre.org/data/definitions/664.html)|
 |[MITRE CWE Base](http://cwe.mitre.org/)|[CWE-134, Uncontrolled Format String](http://cwe.mitre.org/data/definitions/134.html)|
 
-## Biblography
+## Bibliography
 
 |||
 |:---|:---|
 |[[Python 3.10.4 docs]](https://docs.python.org/3/library/string.html#formatstrings)|Format String Syntax. Available from: <https://docs.python.org/3/library/string.html#formatstrings> \[Accessed 5 May 2024]|
-|[MITRE 2023]|CWE - CWE-134: Use of Externally-Controlled Format String (4.13) (mitre.org) Available from: <https://cwe.mitre.org/data/definitions/134.html> \[Accessed 5 May 2024]|
-|[Bader 2023]|Python String Formatting Best Practices – Real Python. Available from: <https://realpython.com/python-string-formatting/> \[Accessed 5 May 2024]|
+|[[MITRE 2023]](https://cwe.mitre.org/data/definitions/134.html)|CWE - CWE-134: Use of Externally-Controlled Format String (4.13) (mitre.org) Available from: <https://cwe.mitre.org/data/definitions/134.html> \[Accessed 5 May 2024]|
+|[[Bader 2023]](https://realpython.com/python-string-formatting/)|Python String Formatting Best Practices – Real Python. Available from: <https://realpython.com/python-string-formatting/> \[Accessed 5 May 2024]|
