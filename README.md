@@ -2,17 +2,18 @@
 
 Promote secure products by knowing the difference between secure compliant
 and non-compliant code with `CPython >= 3.9` using modules listed on
-[Python Module Index](https://docs.python.org/3.9/py-modindex.html)[Python 2023].
+
+[[Python Module Index 2023]](https://docs.python.org/3.9/py-modindex.html) \[Python 2023].
 
 This page is in initiative by Ericsson to improve secure coding in Python by providing a location for study. Its structure is based on
-Common Weakness Enamurator (CWE) [Pillar Weakness](https://cwe.mitre.org/documents/glossary/#Pillar%20Weakness) [mitre.org 2023].
+Common Weakness Enamurator (CWE) [Pillar Weakness](https://cwe.mitre.org/documents/glossary/#Pillar%20Weakness) \[mitre.org 2023].
 It currently contains *only* the code examples, documentation will follow.
 
 ## Disclaimer
 
 Content comes WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, as stated in the license text [CC-BY-4.0](LICENSE/CC-BY-4.0.txt) for documentation and [MIT](LICENSE/MIT.txt).
 Following or using the documentation and or code is at your own risk. Code examples are intended purely for educational use and not for products in parts or in full.
-Code examples are NOT to be used to cause harm of any kind to anyone or anything. 
+Code examples are NOT to be used to cause harm of any kind to anyone or anything.
 
 ## Introduction
 
@@ -26,7 +27,7 @@ Every person writing code shall study the following:
 
 Code examples are written to explain security design with as little code as possible demonstrating the issue in the `noncompliantXX.py` titled Python file.
 The `compliantXX.py` file demonstrates only the mitigation or removal of the described risk.
-None of the code examples are intendet to be used 'as is' for production. Using the code is at your own risk. 
+None of the code examples are intendet to be used 'as is' for production. Using the code is at your own risk.
 
 It is **not production code** and requires code-style or python best practices to be added such as:
 
@@ -39,14 +40,15 @@ It is **not production code** and requires code-style or python best practices t
 
 |[CWE-664: Improper Control of a Resource Through its Lifetime](https://cwe.mitre.org/data/definitions/664.html)|Prominent CVE|
 |:-----------------------------------------------------------------------------------------------------------------------------------------------|:----|
-|[CWE-134: Use of Externally-Controlled Format String](CWE-664/CWE-134/.)|[CVE-2022-27177](https://www.cvedetails.com/cve/CVE-2022-27177/),<br/>CVSSv3.1: **9.8**,<br/>EPSS:**00.37**(01.12.2023)|
+|[CWE-134: Use of Externally-Controlled Format String](CWE-664/CWE-134/.)|[CVE-2022-27177](https://www.cvedetails.com/cve/CVE-2022-27177/),<br>CVSSv3.1: **9.8**,<br>EPSS:**00.37**(01.12.2023)|
 |[CWE-197: Numeric Truncation Error](CWE-664/CWE-197/.)||
 |[CWE-400: Uncontrolled Resource Consumption](CWE-664/CWE-400/README.md)||
 |[CWE-409: Improper Handling of Highly Compressed Data (Data Amplification)](CWE-664/CWE-409/.)||
 |[CWE-410: Insufficient Resource Pool](CWE-664/CWE-410/.)||
 |[CWE-502: Deserialization of Untrusted Data)](CWE-664/CWE-502/.)||
 |[CWE-665: Improper Initialization](CWE-664/CWE-665/.)||
-|[CWE-833: Deadlock](CWE-664/CWE-833/.)||
+|[CWE-681: Improper Control of a Resource Through its Lifetime](CWE-664/CWE-681/.)||
+|[CWE-833: Deadlock](CWE-664/CWE-833/README.md)||
 |[CWE-843: Access of Resource Using Incompatible Type ('Type Confusion')](CWE-664/CWE-843/.)||
 |[XXX-005: Consider hash-based integrity verification of byte code files against their source code files](CWE-664/XXX-005/.)||
 |<img width=680>|<img width=140>|
