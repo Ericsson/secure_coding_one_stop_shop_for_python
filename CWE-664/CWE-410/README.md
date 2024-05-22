@@ -7,8 +7,6 @@ Thread pools combine:
 * Limiting the total amount of worker threads that are re-used in a pool
 * Protecting the input queue from being overloaded by providing optional time-out functions
 * Handling of failures that occur in a thread without impacting the re-usability of threads [Brownlee 2022]
-* Non-Compliant Code Example (Thread-Per-Message)
-* The noncompliant01.py code example demonstrates the Thread-Per-Message design pattern. Each request sent to MessageAPI results in a creation of a new thread.
 
 ## Non-Compliant Code Example (Thread-Per-Message)
 
@@ -77,7 +75,7 @@ PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
 
 ## Compliant Solution (Thread Pool)
 
-The `ThreadPoolExecutor` used in `compliant01.py` places a strict limit on concurrently executing threads. It takes `max_workers` as a constructor argument to determine the number of worker threads. Since `Python 3.8`, the default value for `max_workers` is `min(32, os.cpu_count() + 4)` [Python docs]. The `ThreadPoolExecutor` controlls the Pool of worker threads created and what threads should do when they are not being used, such as making them wait without consuming computational resources [Brownlee 2022]. This example could be further developed by adding more sophisticated timeout handling, limiting the number of messages per request, and sanitizing the input data, however for the sake of simplicity, these aspects have been omitted in the example. In a real application, the timeout and limits should be based on what the mediation layer provides and shall not be hardcoded.
+The `ThreadPoolExecutor` used in `compliant01.py` places a strict limit on concurrently executing threads. It takes `max_workers` as a constructor argument to determine the number of worker threads. Since `Python 3.8`, the default value for `max_workers` is `min(32, os.cpu_count() + 4)` [[Python docs]](https://docs.python.org/3/library/concurrent.futures.html#concurrent.futures.ThreadPoolExecutor). The `ThreadPoolExecutor` controls the Pool of worker threads created and what threads should do when they are not being used, such as making them wait without consuming computational resources [[Brownlee 2022]](https://superfastpython.com/threadpoolexecutor-in-python/). This example could be further developed by adding more sophisticated timeout handling, limiting the number of messages per request, and sanitizing the input data, however for the sake of simplicity, these aspects have been omitted in the example. In a real application, the timeout and limits should be based on what the mediation layer provides and shall not be hardcoded.
 The attacker could still flood the server by creating multiple MessageAPI, each with their own pool. In order to prevent that, a proxy with an intrusion detection system would be necessary. In order to keep the scope of the rule manageable, the intrusion detection system was not implemented.
 
 *[compliant01.py](compliant01.py)*
@@ -140,6 +138,13 @@ print("ATTACKER: start sending messages")
 result_list = mapi.add_messages(attacker_messages)
 print(f"ATTACKER: done sending {len(attacker_messages)} messages, got {len(result_list)} messages back")
 print(f"ATTACKER: result_list = {result_list}")
+```
+Now, after the timeout is reached, `MessageAPI` drops unprocessed messages and returns partial results:
+```bash
+ATTACKER: start sending messages
+INFO:root:add_messages: messages_done=34 messages_not_done=66
+ATTACKER: done sending 100 messages, got 34 messages back
+ATTACKER: result_list = ['processed 5', 'processed 29', 'processed 16', 'processed 30', 'processed 23', 'processed 3', 'processed 0', 'processed 12', 'processed 17', 'processed 31', 'processed 24', 'processed 1', 'processed 10', 'processed 18', 'processed 32', 'processed 25', 'processed 8', 'processed 6', 'processed 19', 'processed 33', 'processed 26', 'processed 4', 'processed 20', 'processed 13', 'processed 27', 'processed 22', 'processed 2', 'processed 11', 'processed 21', 'processed 14', 'processed 28', 'processed 9', 'processed 7', 'processed 15']
 ```
 
 ## Non-Compliant Code Example (Thread Pool without cancellation)
@@ -302,5 +307,5 @@ unknown
 
 |||
 |:---|:---|
-|[Brownlee 2022]|Brownlee, J. (2022). ThreadPoolExecutor in Python: The Complete Guide \[online]. Available from: <https://docs.python.org/3/library/concurrent.futures.html> \[Accessed 2 February 2023].|
-|[[Python docs]](https://docs.python.org/)|Python Software Foundation. (2023). concurrent.futures - Launching parallel tasks [online]. Available from: <https://docs.python.org/3/library/concurrent.futures.html#concurrent.futures.ThreadPoolExecutor> \[Accessed 2 February 2023].|
+|[[Brownlee 2022]](https://superfastpython.com/threadpoolexecutor-in-python/)|Brownlee, J. (2022). ThreadPoolExecutor in Python: The Complete Guide \[online]. Available from: <https://superfastpython.com/threadpoolexecutor-in-python/> \[Accessed 2 February 2023].|
+|[[Python docs]](https://docs.python.org/3/library/concurrent.futures.html#concurrent.futures.ThreadPoolExecutor)|Python Software Foundation. (2023). concurrent.futures - Launching parallel tasks [online]. Available from: <https://docs.python.org/3/library/concurrent.futures.html#concurrent.futures.ThreadPoolExecutor> \[Accessed 2 February 2023].|
