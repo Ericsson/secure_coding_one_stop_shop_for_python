@@ -2,6 +2,7 @@
 
 Promote secure products by knowing the difference between secure compliant
 and non-compliant code with `CPython >= 3.9` using modules listed on
+
 [[Python Module Index 2023]](https://docs.python.org/3.9/py-modindex.html) \[Python 2023].
 
 This page is in initiative by Ericsson to improve secure coding in Python by providing a location for study. Its structure is based on
@@ -54,7 +55,7 @@ It is **not production code** and requires code-style or python best practices t
 
 |[CWE-682: Incorrect Calculation](https://cwe.mitre.org/data/definitions/682.html)|Prominent CVE|
 |:---------------------------------------------------------------------------------------------------------------|:----|
-|[CWE-1335: Promote readability and compatibility by using mathematical written code with arithmetic operations instead of bit-wise operations](CWE-682/CWE-1335/.)||
+|[CWE-1335: Promote readability and compatibility by using mathematical written code with arithmetic operations instead of bit-wise operations](CWE-682/CWE-1335/01/README.md)||
 |[CWE-1339: Insufficient Precision or Accuracy of a Real Number](CWE-682/CWE-1339/.)                            ||
 |<img width=680>|<img width=140>|
 
