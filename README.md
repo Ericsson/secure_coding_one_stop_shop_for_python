@@ -2,6 +2,7 @@
 
 Promote secure products by knowing the difference between secure compliant
 and non-compliant code with `CPython >= 3.9` using modules listed on
+
 [Python Module Index](https://docs.python.org/3.9/py-modindex.html) [Python 2023].
 
 This page is in initiative by Ericsson to improve secure coding in Python by providing a location for study. Its structure is based on
@@ -39,7 +40,7 @@ It is **not production code** and requires code-style or python best practices t
 
 |[CWE-664: Improper Control of a Resource Through its Lifetime](https://cwe.mitre.org/data/definitions/664.html)|Prominent CVE|
 |:-----------------------------------------------------------------------------------------------------------------------------------------------|:----|
-|[CWE-134: Use of Externally-Controlled Format String](CWE-664/CWE-134/.)|[CVE-2022-27177](https://www.cvedetails.com/cve/CVE-2022-27177/),<br />CVSSv3.1: **9.8**,<br />EPSS:**00.37**(01.12.2023)|
+|[CWE-134: Use of Externally-Controlled Format String](CWE-664/CWE-134/.)|[CVE-2022-27177](https://www.cvedetails.com/cve/CVE-2022-27177/),<br>CVSSv3.1: **9.8**,<br>EPSS:**00.37**(01.12.2023)|
 |[CWE-197: Numeric Truncation Error](CWE-664/CWE-197/.)||
 |[CWE-400: Uncontrolled Resource Consumption](CWE-664/CWE-400/.)||
 |[CWE-409: Improper Handling of Highly Compressed Data (Data Amplification)](CWE-664/CWE-409/.)||
@@ -47,13 +48,13 @@ It is **not production code** and requires code-style or python best practices t
 |[CWE-502: Deserialization of Untrusted Data)](CWE-664/CWE-502/.)||
 |[CWE-665: Improper Initialization](CWE-664/CWE-665/.)||
 |[CWE-681: Improper Control of a Resource Through its Lifetime](CWE-664/CWE-681/.)||
-|[CWE-833: Deadlock](CWE-664/CWE-833/.)||
+|[CWE-833: Deadlock](CWE-664/CWE-833/README.md)||
 |[CWE-843: Access of Resource Using Incompatible Type ('Type Confusion')](CWE-664/CWE-843/.)||
 |[XXX-005: Consider hash-based integrity verification of byte code files against their source code files](CWE-664/XXX-005/.)||
 
 |[CWE-682: Incorrect Calculation](https://cwe.mitre.org/data/definitions/682.html)|Prominent CVE|
 |:---------------------------------------------------------------------------------------------------------------|:----|
-|[CWE-1335: Promote readability and compatibility by using mathematical written code with arithmetic operations instead of bit-wise operations](CWE-682/CWE-1335/.)||
+|[CWE-1335: Promote readability and compatibility by using mathematical written code with arithmetic operations instead of bit-wise operations](CWE-682/CWE-1335/01/README.md)||
 |[CWE-1339: Insufficient Precision or Accuracy of a Real Number](CWE-682/CWE-1339/.)                            ||
 
 |[CWE-693: Protection Mechanism Failure](https://cwe.mitre.org/data/definitions/693.html)|Prominent CVE|
@@ -65,12 +66,12 @@ It is **not production code** and requires code-style or python best practices t
 |[CWE-703: Improper Check or Handling of Exceptional Conditions](https://cwe.mitre.org/data/definitions/703.html)|Prominent CVE|
 |:----------------------------------------------------------------|:----|
 |[CWE-230: Improper Handling of Missing Values](CWE-703/CWE-230/.)||
-|[CWE-392: Missing Report of Error Condition](CWE-703/CWE-392/.)||
+|[CWE-392: Missing Report of Error Condition](CWE-703/CWE-392/README.md)||
 |[CWE-754: Improper Check for Unusual or Exceptional Conditions](CWE-703/CWE-754/.)||
 
 |[CWE-707: Improper Neutralization](https://cwe.mitre.org/data/definitions/707.html)|Prominent CVE|
 |:----------------------------------------------------------------|:----|
-|[CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')](CWE-707/CWE-89/.)|[CVE-2019-8600](https://www.cvedetails.com/cve/CVE-2019-8600/),<br />CVSSv3.1: **9.8**,<br />EPSS:**01.43**(18.02.2024)|
+|[CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')](CWE-707/CWE-89/.)|[CVE-2019-8600](https://www.cvedetails.com/cve/CVE-2019-8600/),<br/>CVSSv3.1: **9.8**,<br/>EPSS:**01.43**(18.02.2024)|
 |[CWE-117: Improper Output Neutralization for Logs](CWE-707/CWE-117/.)||
 |[CWE-180: Incorrect behavior order: Validate before Canonicalize](CWE-707/CWE-180/.)||
 
