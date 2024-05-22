@@ -1,11 +1,11 @@
 CWE-501: Trust Boundary Violation
 =================================
-Python does not share the concept of different trust zones within the same runtime as explained in the *JAVA SEI CERT Rule 15 platform security (SEC)* [SEI CERT 2022] rules. Python neither has a security manager that can control access between trusted and untrusted code running on the same JVM. “Private” instance variables that cannot be accessed except from inside an object don’t exist in Python [Python 2023].
+Python does not share the concept of different trust zones within the same runtime as explained in the *JAVA SEI CERT Rule 15 platform security (SEC)* [[SEI CERT 2022]](https://wiki.sei.cmu.edu/confluence/pages/viewpage.action?pageId=88487683) rules. Python neither has a security manager that can control access between trusted and untrusted code running on the same JVM. “Private” instance variables that cannot be accessed except from inside an object don’t exist in Python [Python 2023].
 
 In Python we need to implement different trust zone's by starting  python runtime's with individual POSIX/Machine users. The POSIX/Machine user access rights must be set in accordance to level of trust per zone.
 
 # Noncompliant STRIDE example - New User Sign-up Process:
-The example shows how new users sign up for a bank account. STRIDE illustrates trust boundaries in dotted red lines [OWASP, Conklin,  Drake, 2023]. In the noncompliant example, we have all Python scripts running under the same POSIX user.
+The example shows how new users sign up for a bank account. STRIDE illustrates trust boundaries in dotted red lines [[OWASP, Conklin,  Drake, 2023]](https://cwe.mitre.org/data/definitions/134.html). In the noncompliant example, we have all Python scripts running under the same POSIX user.
 
 ![noncompliant01.png](noncompliant01.png "noncompliant01.png")
 
@@ -37,9 +37,9 @@ unknown
 |[MITRE CWE](http://cwe.mitre.org/)|Class [CWE - CWE-269: Improper Privilege Management (4.12) (mitre.org)](https://cwe.mitre.org/data/definitions/269.html)|
 |[OWASP Top 10:2021](https://owasp.org/Top10/A04_2021-Insecure_Design/)|[A04 Insecure Design - OWASP Top 10:2021](https://owasp.org/Top10/A04_2021-Insecure_Design/)|
 
-# Biblography
+# Bibliography
 |||
 |:---|:---|
-|[SEI CERT 2022]|Rule 15. Platform Security (SEC). Available from: https://wiki.sei.cmu.edu/confluence/pages/viewpage.action?pageId=88487683 [accessed 07 May 2024]|
-|[[Python 2023]](https://docs.python.org/)|Python Software Foundation. (2023). Classes - Private Variables. Available from: https://docs.python.org/3.9/tutorial/classes.html?highlight=private#private-variables [accessed 13 September 2023]|
-[OWASP, Conklin,  Drake, 2023]|[CWE - CWE-134: Use of Externally-Controlled Format String (4.13) (mitre.org)] https://cwe.mitre.org/data/definitions/134.html|
+|[[SEI CERT 2022]](https://wiki.sei.cmu.edu/confluence/pages/viewpage.action?pageId=88487683)|Rule 15. Platform Security (SEC). Available from: https://wiki.sei.cmu.edu/confluence/pages/viewpage.action?pageId=88487683 [accessed 07 May 2024]|
+|[[Python 2023]]([https://docs.python.org/](https://docs.python.org/3.9/tutorial/classes.html?highlight=private#private-variables))|Python Software Foundation. (2023). Classes - Private Variables. Available from: https://docs.python.org/3.9/tutorial/classes.html?highlight=private#private-variables [accessed 13 September 2023]|
+[[OWASP, Conklin,  Drake, 2023]](https://cwe.mitre.org/data/definitions/134.html)|[CWE - CWE-134: Use of Externally-Controlled Format String (4.13) (mitre.org)] https://cwe.mitre.org/data/definitions/134.html|
