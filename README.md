@@ -41,19 +41,20 @@ It is **not production code** and requires code-style or python best practices t
 |:-----------------------------------------------------------------------------------------------------------------------------------------------|:----|
 |[CWE-134: Use of Externally-Controlled Format String](CWE-664/CWE-134/.)|[CVE-2022-27177](https://www.cvedetails.com/cve/CVE-2022-27177/),<br/>CVSSv3.1: **9.8**,<br/>EPSS:**00.37**(01.12.2023)|
 |[CWE-197: Numeric Truncation Error](CWE-664/CWE-197/.)||
-|[CWE-400: Uncontrolled Resource Consumption](CWE-664/CWE-400/.)||
+|[CWE-400: Uncontrolled Resource Consumption](CWE-664/CWE-400/README.md)||
 |[CWE-409: Improper Handling of Highly Compressed Data (Data Amplification)](CWE-664/CWE-409/.)||
 |[CWE-410: Insufficient Resource Pool](CWE-664/CWE-410/.)||
 |[CWE-502: Deserialization of Untrusted Data)](CWE-664/CWE-502/README.md)||
 |[CWE-665: Improper Initialization](CWE-664/CWE-665/.)||
-|[CWE-833: Deadlock](CWE-664/CWE-833/.)||
+|[CWE-681: Improper Control of a Resource Through its Lifetime](CWE-664/CWE-681/.)||
+|[CWE-833: Deadlock](CWE-664/CWE-833/README.md)||
 |[CWE-843: Access of Resource Using Incompatible Type ('Type Confusion')](CWE-664/CWE-843/.)||
 |[XXX-005: Consider hash-based integrity verification of byte code files against their source code files](CWE-664/XXX-005/.)||
 |<img width=680>|<img width=140>|
 
 |[CWE-682: Incorrect Calculation](https://cwe.mitre.org/data/definitions/682.html)|Prominent CVE|
 |:---------------------------------------------------------------------------------------------------------------|:----|
-|[CWE-1335: Promote readability and compatibility by using mathematical written code with arithmetic operations instead of bit-wise operations](CWE-682/CWE-1335/.)||
+|[CWE-1335: Promote readability and compatibility by using mathematical written code with arithmetic operations instead of bit-wise operations](CWE-682/CWE-1335/01/README.md)||
 |[CWE-1339: Insufficient Precision or Accuracy of a Real Number](CWE-682/CWE-1339/.)                            ||
 |<img width=680>|<img width=140>|
 
@@ -67,7 +68,7 @@ It is **not production code** and requires code-style or python best practices t
 |[CWE-703: Improper Check or Handling of Exceptional Conditions](https://cwe.mitre.org/data/definitions/703.html)|Prominent CVE|
 |:----------------------------------------------------------------|:----|
 |[CWE-230: Improper Handling of Missing Values](CWE-703/CWE-230/.)||
-|[CWE-392: Missing Report of Error Condition](CWE-703/CWE-392/.)||
+|[CWE-392: Missing Report of Error Condition](CWE-703/CWE-392/README.md)||
 |[CWE-754: Improper Check for Unusual or Exceptional Conditions](CWE-703/CWE-754/.)||
 |<img width=680>|<img width=140>|
 
