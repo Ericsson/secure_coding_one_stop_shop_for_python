@@ -122,7 +122,7 @@ if __name__ == "__main__":
 |:----|:----|:----|:----|:----|
 |ConsoleMe < 1.2.2|[CVE-2022-27177](https://www.cvedetails.com/cve/CVE-2022-27177/)|v3.1:9.8|A Python format string issue leading to information disclosure and potentially remote code execution.||
 |Zenoss Core < 4.2.5|[CVE-2014-6262](https://www.cvedetails.com/cve/CVE-2014-6262/) ZEN-15415|Multiple format string vulnerabilities in the python module in RRDtool allow remote attackers to execute arbitrary code or cause a denial of service using the rrdtool.graph function.|v3.1:7.5|related issue to CVE-2013-2131.|
-|RRDTool < 1.4.6|[CVE-2013-2131](https://www.cvedetails.com/cve/CVE-2013-2131/)|Format string vulnerability in the rrdtool module 1.4.7 for Python, allows context-dependent attackers to cause a denial of service (crash) via format string specifiers to the rrdtool.graph function.||
+|RRDTool < 1.4.6|[CVE-2013-2131](https://www.cvedetails.com/cve/CVE-2013-2131/)|Format string vulnerability in the rrdtool module 1.4.7 for Python, allows context-dependent attackers to cause a denial of service (crash) via format string specifiers to the rrdtool.graph function.|||
 
 ## Related Guidelines
 
