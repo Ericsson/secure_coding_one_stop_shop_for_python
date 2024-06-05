@@ -1,7 +1,26 @@
+# PAGE MOVED!
+<br>
+<br>
+
+> **[!NOTE]
+> This repository was permanently moved under OpenSSF
+> [wg-best-practices-os-developers/docs
+/Secure-Coding-Guide-for-Python/](https://github.com/ossf/wg-best-practices-os-developers/tree/main/docs/Secure-Coding-Guide-for-Python)**
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
 # Secure Coding One Stop Shop for Python
 
 Promote secure products by knowing the difference between secure compliant
 and non-compliant code with `CPython >= 3.9` using modules listed on
+
+
 
 [Python Module Index](https://docs.python.org/3.9/py-modindex.html) [Python 2023].
 
