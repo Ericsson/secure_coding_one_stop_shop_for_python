@@ -2,7 +2,7 @@
 <br>
 <br>
 
-> **[!NOTE]
+> [!NOTE]
 > This repository was permanently moved under OpenSSF
 > [wg-best-practices-os-developers/docs
 /Secure-Coding-Guide-for-Python/](https://github.com/ossf/wg-best-practices-os-developers/tree/main/docs/Secure-Coding-Guide-for-Python)**
